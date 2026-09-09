@@ -1258,15 +1258,6 @@ a.contact__item:hover {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
-     @media (prefers-reduced-motion: reduce) {
-  .topbar__track {
-    animation-duration: 26s !important;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
@@ -1275,6 +1266,11 @@ a.contact__item:hover {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .topbar__track {
+    animation-duration: 26s !important;
+    animation-iteration-count: infinite !important;
   }
 }
 
