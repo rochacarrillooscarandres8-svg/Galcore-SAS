@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+          setTimeout(() => entry.target.classList.add("is-visible"), 80);
             obs.unobserve(entry.target); // se anima solo una vez
           }
         });
