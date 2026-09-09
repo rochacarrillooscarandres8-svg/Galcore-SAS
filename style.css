@@ -1256,10 +1256,17 @@ a.contact__item:hover {
    18. Accesibilidad · respeta "reduce motion"
    ---------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
+     @media (prefers-reduced-motion: reduce) {
+  .topbar__track {
+    animation-duration: 26s !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
