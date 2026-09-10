@@ -834,7 +834,7 @@ ul {
    11. Testimonios
    ---------------------------------------------------------------- */
 .testimonials {
-  background: var(--gray);
+  background-color: #c3c0bc;
 }
 
 .testimonials__grid {
