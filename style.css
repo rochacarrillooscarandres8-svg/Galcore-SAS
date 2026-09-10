@@ -1212,10 +1212,9 @@ a.contact__item:hover {
   }
 
   .gallery__item {
-    flex-basis: 100%; /* 1 visible en móvil */
+    flex-basis: 100%;
   }
 
-  /* Contacto: columnas apiladas + separador horizontal */
   .contact__cols {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1247,6 +1246,29 @@ a.contact__item:hover {
     width: 42px;
     height: 42px;
     font-size: 1.6rem;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__chip {
+    right: 0;
+    bottom: -16px;
+  }
+
+  .hero__title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero__trust {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
   }
 }
 
