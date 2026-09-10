@@ -1212,9 +1212,10 @@ a.contact__item:hover {
   }
 
   .gallery__item {
-    flex-basis: 100%;
+    flex-basis: 100%; /* 1 visible en móvil */
   }
 
+  /* Contacto: columnas apiladas + separador horizontal */
   .contact__cols {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1247,37 +1248,30 @@ a.contact__item:hover {
     height: 42px;
     font-size: 1.6rem;
   }
+}
 
-  /* ← AGREGA ESTO NUEVO */
-  .hero {
-    min-height: 100svh;
-  }
-
-  .hero__title {
-    font-size: clamp(1.8rem, 8vw, 3rem);
-  }
-
-  .hero__subtitle {
-    font-size: 0.95rem;
-  }
-
-  .hero__eyebrow {
-    font-size: 0.8rem;
-  }
-
-  .hero__trust {
-    flex-direction: column;
-    gap: 6px;
-    font-size: 0.85rem;
-  }
-
-  .about__grid {
+@media (max-width: 380px) {
+  .footer__grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .about__chip {
-    right: 0;
-    bottom: -16px;
+/* ----------------------------------------------------------------
+   18. Accesibilidad · respeta "reduce motion"
+   ---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 
