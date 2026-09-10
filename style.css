@@ -1,5 +1,5 @@
 /* ==================================================================
-   FERREMAX · Hoja de estilos
+   Galcore · Hoja de estilos
    HTML5 + CSS3 puro (sin frameworks)
    Paleta:
      --orange  #F97316   (principal)
@@ -53,7 +53,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Compensa la altura de barra + navbar al saltar a un ancla */
   scroll-padding-top: calc(var(--nav-h) + 10px);
 }
 
@@ -205,12 +204,11 @@ ul {
 .topbar__track {
   display: flex;
   width: max-content;
-  /* Desplazamiento continuo e infinito */
   animation: marquee 26s linear infinite;
 }
 
 .topbar:hover .topbar__track {
-  animation-play-state: paused; /* pausa al pasar el mouse */
+  animation-play-state: paused;
 }
 
 .topbar__list {
@@ -260,7 +258,6 @@ ul {
     height var(--transition);
 }
 
-/* Estado tras hacer scroll (lo añade JS) */
 .nav.is-scrolled {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-sm);
@@ -274,14 +271,13 @@ ul {
   gap: 20px;
 }
 
-.nav__logo img{
-    width: 75px;   /* ajusta el tamaño que quieras */
-    height: auto;
-    display: block;
-    object-fit: contain;
+.nav__logo img {
+  width: 75px;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
-/* En estado scrolled el logo (blanco) debe verse sobre fondo claro */
 .nav.is-scrolled .nav__logo img {
   filter: invert(1) hue-rotate(180deg) brightness(0.55) saturate(2.5);
   height: 40px;
@@ -310,7 +306,6 @@ ul {
   color: var(--dark);
 }
 
-/* Subrayado animado */
 .nav__link::after {
   content: "";
   position: absolute;
@@ -339,7 +334,6 @@ ul {
   font-size: 0.9rem;
 }
 
-/* Botón hamburguesa */
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -372,7 +366,6 @@ ul {
   background: var(--dark);
 }
 
-/* Animación a "X" cuando el menú está abierto */
 .nav__toggle.is-open span:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg);
 }
@@ -391,7 +384,6 @@ ul {
   min-height: calc(100vh - var(--nav-h) - var(--topbar-h));
   display: flex;
   align-items: center;
-  /* El navbar es sticky y transparente: subimos el hero bajo él */
   margin-top: calc(-1 * var(--nav-h));
   padding-top: var(--nav-h);
   overflow: hidden;
@@ -485,7 +477,6 @@ ul {
   font-weight: 500;
 }
 
-/* Indicador de scroll */
 .hero__scroll {
   position: absolute;
   left: 50%;
@@ -625,7 +616,6 @@ ul {
 }
 
 .stats::before {
-  /* franja de acento diagonal */
   content: "";
   position: absolute;
   inset: 0;
@@ -694,7 +684,6 @@ ul {
 }
 
 .gallery__item {
-  /* 3 visibles en escritorio (33.333%) */
   flex: 0 0 33.3333%;
   padding: 10px;
 }
@@ -768,9 +757,10 @@ ul {
    10. Nosotros
    ---------------------------------------------------------------- */
 .about {
-  background-color: #ede2db; /* naranja oscuro */
+  background-color: #ede2db;
 }
-   .about__grid {
+
+.about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 5vw, 64px);
@@ -833,9 +823,8 @@ ul {
 /* ----------------------------------------------------------------
    11. Testimonios
    ---------------------------------------------------------------- */
-
-   .testimonials {
-  background-color: #c3c0bc;
+.testimonials {
+  background-color: #f8fafc;
 }
 
 .testimonials__grid {
@@ -1032,7 +1021,7 @@ a.contact__item:hover {
 
 .footer__brand img {
   height: auto;
-  width: 260px; /* Ajusta a 220px, 280px o 300px según te guste */
+  width: 260px;
   margin-bottom: 16px;
   display: block;
 }
@@ -1106,10 +1095,8 @@ a.contact__item:hover {
 .reveal {
   opacity: 0;
   transform: translateY(34px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-  .hero .reveal {
-  transition-delay: 0.3s;
-}
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: 0.15s;
 }
 
 .reveal.is-visible {
@@ -1117,7 +1104,6 @@ a.contact__item:hover {
   transform: none;
 }
 
-/* Pequeño escalonado entre tarjetas hermanas */
 .services__grid .reveal:nth-child(2),
 .testimonials__grid .reveal:nth-child(2) { transition-delay: 0.08s; }
 .services__grid .reveal:nth-child(3),
@@ -1150,11 +1136,11 @@ a.contact__item:hover {
   }
 
   .gallery__item {
-    flex-basis: 50%; /* 2 visibles en tablet */
+    flex-basis: 50%;
   }
 }
 
-/* Menú móvil: aparece bajo el navbar */
+/* Menú móvil */
 @media (max-width: 860px) {
   .nav__toggle {
     display: flex;
@@ -1179,7 +1165,6 @@ a.contact__item:hover {
     transform: translateY(0);
   }
 
-  /* En móvil los enlaces siempre claros (fondo oscuro del panel) */
   .nav__link,
   .nav.is-scrolled .nav__link {
     color: var(--white);
@@ -1213,10 +1198,9 @@ a.contact__item:hover {
   }
 
   .gallery__item {
-    flex-basis: 100%; /* 1 visible en móvil */
+    flex-basis: 100%;
   }
 
-  /* Contacto: columnas apiladas + separador horizontal */
   .contact__cols {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1249,6 +1233,29 @@ a.contact__item:hover {
     height: 42px;
     font-size: 1.6rem;
   }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__chip {
+    right: 0;
+    bottom: -16px;
+  }
+
+  .hero__title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero__trust {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1273,5 +1280,10 @@ a.contact__item:hover {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .topbar__track {
+    animation-duration: 26s !important;
+    animation-iteration-count: infinite !important;
   }
 }
