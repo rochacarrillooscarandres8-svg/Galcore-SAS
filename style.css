@@ -768,8 +768,7 @@ ul {
    10. Nosotros
    ---------------------------------------------------------------- */
 .about {
-  background-color: #b84a00;
-  color: #ffffff;
+  background-color: #ede2db; /* naranja oscuro */
 }
 .about__grid {
   display: grid;
