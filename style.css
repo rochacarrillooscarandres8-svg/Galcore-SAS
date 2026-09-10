@@ -770,7 +770,7 @@ ul {
 .about {
   background-color: #ede2db; /* naranja oscuro */
 }
-.about__grid {
+   .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 5vw, 64px);
@@ -833,8 +833,9 @@ ul {
 /* ----------------------------------------------------------------
    11. Testimonios
    ---------------------------------------------------------------- */
-.testimonials {
-   background-color: #f8fafc;
+
+   .testimonials {
+  background-color: #c3c0bc;
 }
 
 .testimonials__grid {
@@ -896,7 +897,6 @@ ul {
   font-size: 0.85rem;
   color: var(--muted);
 }
-
 
 /* ----------------------------------------------------------------
    12. Contacto
@@ -1106,8 +1106,9 @@ a.contact__item:hover {
 .reveal {
   opacity: 0;
   transform: translateY(34px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-  transition-delay: 0.15s;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  .hero .reveal {
+  transition-delay: 0.3s;
 }
 }
 
@@ -1212,9 +1213,10 @@ a.contact__item:hover {
   }
 
   .gallery__item {
-    flex-basis: 100%;
+    flex-basis: 100%; /* 1 visible en móvil */
   }
 
+  /* Contacto: columnas apiladas + separador horizontal */
   .contact__cols {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1247,29 +1249,6 @@ a.contact__item:hover {
     height: 42px;
     font-size: 1.6rem;
   }
-
-  .about__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about__chip {
-    right: 0;
-    bottom: -16px;
-  }
-
-  .hero__title {
-    font-size: clamp(1.8rem, 8vw, 3rem);
-  }
-
-  .hero__subtitle {
-    font-size: 0.95rem;
-  }
-
-  .hero__trust {
-    flex-direction: column;
-    gap: 6px;
-    font-size: 0.85rem;
-  }
 }
 
 @media (max-width: 380px) {
@@ -1296,26 +1275,3 @@ a.contact__item:hover {
     transform: none;
   }
 }
-
-/* ----------------------------------------------------------------
-   18. Accesibilidad · respeta "reduce motion"
-   ---------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-
-  .topbar__track {
-    animation-duration: 26s !important;
-    animation-iteration-count: infinite !important;
-  }
-}
-
