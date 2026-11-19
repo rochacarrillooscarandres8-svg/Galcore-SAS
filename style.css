@@ -640,8 +640,10 @@ ul {
   font-weight: 700;
   line-height: 1;
   font-size: clamp(2.4rem, 5vw, 3.6rem);
-  background: none;
-  color: #FF2E2E;
+  background: linear-gradient(120deg, #FF3B30, #E01E1E);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
 }
 
 .stat__label {
